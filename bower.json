@@ -1,0 +1,29 @@
+{
+  "name": "ionic-plus-menu",
+  "authors": [
+    "pregiotek <ndg@pregiotek.com>"
+  ],
+  "description": "Menu and Button Material UI-like for Ionic applications",
+  "main": [
+    "dist/ionic-plus-menu.css",
+    "dist/ionic-plus-menu.js"
+  ],
+  
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "ionic",
+    "plus-menu"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
