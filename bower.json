@@ -1,12 +1,12 @@
 {
-  "name": "ionic-plus-menu",
+  "name": "ion-floating-menu",
   "authors": [
     "pregiotek <ndg@pregiotek.com>"
   ],
-  "description": "Menu and Button Material UI-like for Ionic applications",
+  "description": "Material UI-like Floating Action Button and Menu for Ionic applications",
   "main": [
-    "dist/ionic-plus-menu.css",
-    "dist/ionic-plus-menu.js"
+    "dist/ion-floating-menu.css",
+    "dist/ion-floating-menu.js"
   ],
   
   "moduleType": [
@@ -14,16 +14,19 @@
   ],
   "keywords": [
     "ionic",
-    "plus-menu"
+    "ion-floating-menu",
+    "ion-floating-button",
+    "material"
   ],
   "license": "MIT",
   "homepage": "",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "nbproject"
   ]
 }

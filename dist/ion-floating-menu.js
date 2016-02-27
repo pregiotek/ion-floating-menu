@@ -19,11 +19,12 @@ angular.module('ionic-plus-menu', [])
             return {
                 restrict: 'E',
                 scope: {
-                    click: '&?',
+                    click: '&',
                     buttonColor: '@?',
                     icon: '@?',
+                    hasFooter: '=?',
                     iconColor: '@?'},
-                template: '<ul id="plus-button">' +
+                template: '<ul id="plus-button" ng-style="{\'bottom\' : \'{{bottomValue}}\' }">' +
                         '<li ng-style="{\'background-color\': \'{{buttonColor}}\' }">' +
                         '<a><i ng-click="click()" class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': \'{{iconColor}}\' }"></i></a>' +
                         '</li>' +
@@ -34,6 +35,13 @@ angular.module('ionic-plus-menu', [])
                     $scope.buttonColor = $scope.buttonColor || '#2AC9AA';
                     $scope.icon = $scope.icon || 'ion-plus';
                     $scope.iconColor = $scope.iconColor || '#fff';
+                    $scope.hasFooter = $scope.hasFooter || false;
+
+                    if ($scope.hasFooter) {
+                        $scope.bottomValue = '60px';
+                    } else {
+                        $scope.bottomValue = '20px';
+                    }
                 }
             };
 

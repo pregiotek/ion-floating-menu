@@ -2,8 +2,8 @@
  * Copyright 2016 PREGIOTEK
  * http://pregiotek.com/
  *
- * ionic-menu-plus, v1.0.0
- * A menu Material UI - like for Ionic.
+ * ion-floating-menu
+ * Material UI-like Floating Action Button and Menu for Ionic applications.
  *
  * By @ennedigi
  *
@@ -11,9 +11,9 @@
  *
  */
 
-/*plus-button*/
+/*floating-button*/
 
-#plus-button {
+#floating-button {
     bottom: 20px;
     position: fixed;
     right: 20px;
@@ -34,13 +34,13 @@
     border: none;
     border-radius: 50%;
 }
-#plus-button>li {
+#floating-button>li {
     transition: all .4s;
     -webkit-transition: all .4s;
     -moz-transition: .4s;
 }
-#plus-button>li,
-#plus-button:after {
+#floating-button>li,
+#floating-button:after {
     position: absolute;
     left: 0;
     top: 0;
@@ -57,7 +57,7 @@
     /*background-color: #E80C7A;*/
 }
 
-#plus-button a {
+#floating-button a {
     width: 40px;
     height: 40px;
     display: inline-block;
@@ -69,9 +69,9 @@
 }
 
 
-/*plus-menu*/
+/*floating-menu*/
 
-#plus-menu {
+#floating-menu {
     bottom: 20px;
     position: fixed;
     right: 20px;
@@ -93,8 +93,8 @@
     border-radius: 50%;
 }
 
-#plus-menu>li,
-#plus-menu:after {
+#floating-menu>li,
+#floating-menu:after {
     position: absolute;
     left: 0;
     top: 0;
@@ -111,13 +111,13 @@
     /*background-color: #E80C7A;*/
 }
 
-#plus-menu>li {
+#floating-menu>li {
     transition: all .4s;
     -webkit-transition: all .4s;
     -moz-transition: .4s;
 }
 
-#plus-menu:after {
+#floating-menu:after {
     font-size: 20px;
 /*    font-family:"Ionicons";
     content:"\f218";*/
@@ -126,12 +126,12 @@
     -webkit-border-radius: 50%;
 }
 
-#plus-menu.active:after {
+#floating-menu.active:after {
 /*    font-family:"Ionicons";
     content: "\f209"; */
 }
 
-#plus-menu a {
+#floating-menu a {
     width: 40px;
     height: 40px;
     display: inline-block;
@@ -142,19 +142,19 @@
     font-size: 0.8em;
 }
 
-#plus-menu.active> li:nth-child(1) {
+#floating-menu.active> li:nth-child(1) {
     transition-delay: 0ms; 
     -webkit-transition-delay: 0ms; 
     top: -70px
 }
 
-#plus-menu.active> li:nth-child(2) {
+#floating-menu.active> li:nth-child(2) {
     transition-delay: 50ms; -webkit-transition-delay: 50ms; top: -140px;
 }
-#plus-menu.active> li:nth-child(3){
+#floating-menu.active> li:nth-child(3){
     transition-delay: 100ms; -webkit-transition-delay: 100ms; top: -210px;
 }
-#plus-menu.active> li:nth-child(4){
+#floating-menu.active> li:nth-child(4){
     transition-delay: 150ms; -webkit-transition-delay: 150ms; top: -280px;
 }
 
