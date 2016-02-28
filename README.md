@@ -29,6 +29,8 @@ Add `ion-floating-menu` as a module dependency of your angular module.
 
 ## Usage: ionic-floating-button
 
+![Alt ion-floating-button](/doc/ion-floating-button.png?raw=true)
+
 Add the `ion-floating-button` directive in your template.
 
 Important: put it before and outside the `ion-content` node:
@@ -50,6 +52,8 @@ where `myEvent()` is trigger when you tap or click.
 * __has-footer__: if the template has a footer, so it fixes the position (`false` by default)
 
 ## Usage: ion-floating-menu
+
+![Alt ion-floating-menu](/doc/ion-floating-menu.png)
 
 Add the `ion-floating-menu` directive in your template.
 
