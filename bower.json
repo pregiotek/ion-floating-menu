@@ -1,32 +1,39 @@
 {
-  "name": "ion-floating-menu",
-  "authors": [
-    "pregiotek <ndg@pregiotek.com>"
-  ],
-  "description": "Material UI-like Floating Action Button and Menu for Ionic applications",
-  "main": [
-    "dist/ion-floating-menu.css",
-    "dist/ion-floating-menu.js"
-  ],
-  
-  "moduleType": [
-    "node"
-  ],
-  "keywords": [
-    "ionic",
-    "ion-floating-menu",
-    "ion-floating-button",
-    "material"
-  ],
-  "license": "MIT",
-  "homepage": "",
-  "private": false,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests",
-    "nbproject"
-  ]
+    "name": "ion-floating-menu",
+    "version": "1.0.0",
+    "authors": [
+        "pregiotek <ndg@pregiotek.com>"
+    ],
+    "description": "Material UI-like Floating Action Button and Menu for Ionic applications",
+    "main": [
+        "dist/ion-floating-menu.css",
+        "dist/ion-floating-menu.js"
+    ],
+    "moduleType": [
+        "node"
+    ],
+    "keywords": [
+        "ionic",
+        "floating",
+        "button",
+        "menu",
+        "ion-floating-menu",
+        "ion-floating-button",
+        "material"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pregiotek/ion-floating-menu.git"
+    },
+    "license": "MIT",
+    "homepage": "https://github.com/pregiotek/ion-floating-menu",
+    "private": false,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests",
+        "nbproject"
+    ]
 }
