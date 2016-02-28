@@ -2,8 +2,8 @@
  * Copyright 2016 PREGIOTEK
  * http://pregiotek.com/
  *
- * ionic-menu-plus, v1.0.0
- * A menu Material UI - like for Ionic.
+ * ion-floating-menu
+ * Material UI-like Floating Action Button and Menu for Ionic applications.
  *
  * By @ennedigi
  * 
@@ -12,9 +12,9 @@
  */
 
 
-angular.module('ionic-plus-menu', [])
+angular.module('ion-floating-menu', [])
 
-        .directive('ionicPlusButton', function () {
+        .directive('ionFloatingButton', function () {
 
             return {
                 restrict: 'E',
@@ -22,11 +22,11 @@ angular.module('ionic-plus-menu', [])
                     click: '&',
                     buttonColor: '@?',
                     icon: '@?',
-                    hasFooter: '=?',
-                    iconColor: '@?'},
-                template: '<ul id="plus-button" ng-style="{\'bottom\' : \'{{bottomValue}}\' }">' +
+                    iconColor: '@?',
+                    hasFooter: '=?'},
+                template: '<ul id="floating-button" ng-style="{\'bottom\' : \'{{bottomValue}}\' }">' +
                         '<li ng-style="{\'background-color\': \'{{buttonColor}}\' }">' +
-                        '<a><i ng-click="click()" class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': \'{{iconColor}}\' }"></i></a>' +
+                        '<a ng-click="click()"><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': \'{{iconColor}}\' }"></i></a>' +
                         '</li>' +
                         '</ul>',
                 replace: true,
@@ -45,4 +45,98 @@ angular.module('ionic-plus-menu', [])
                 }
             };
 
-        });
+        })
+        .directive('ionFloatingMenu', function () {
+
+            return {
+                restrict: 'E',
+                scope: {
+                    menuOpenColor: '@?',
+                    menuOpenIcon: '@?',
+                    menuOpenIconColor: '@?',
+                    menuColor: '@?',
+                    menuIcon: '@?',
+                    menuIconColor: '@?',
+                    hasFooter: '=?'
+                },
+//                template: '<ul ng-transclude id="floating-menu" \n\
+//                            ng-style="{\'bottom\' : \'{{bottomValue}}\', \'background-color\' : buttonColor, \'color\': iconColor}" \n\
+//                            ng-class="{\'active\' : isOpen}" \n\
+//                            ng-click="open()">' +
+//                            '</ul>',
+                 template: '<ul ng-transclude id="floating-menu" class="icon menu-icon" \n\
+                            ng-style="{\'bottom\' : \'{{bottomValue}}\', \'background-color\' : buttonColor, \'color\': iconColor}" \n\
+                            ng-class="[icon, {\'active\' : isOpen}]" \n\
+                            ng-click="open()">' +
+                            '</ul>',    
+                    
+                replace: true,
+                transclude: true,
+                controller: function ($scope) {
+                    $scope.isOpen = false;
+                    $scope.open = function () {
+                        $scope.isOpen = !$scope.isOpen;
+
+                        if ($scope.isOpen) {
+                            $scope.setOpen();
+                        } else {
+                            $scope.setClose();
+                        }
+                    };
+
+                    $scope.setOpen = function () {
+                        $scope.buttonColor = menuOpenColor;
+                        $scope.icon = menuOpenIcon;
+                        $scope.iconColor = menuOpenIconColor;
+                    };
+                    $scope.setClose = function () {
+                        $scope.buttonColor = menuColor;
+                        $scope.icon = menuIcon;
+                        $scope.iconColor = menuIconColor;
+                    };
+
+                    var menuColor = $scope.menuColor || '#2AC9AA';
+                    var menuIcon = $scope.menuIcon || 'ion-plus';
+                    var menuIconColor = $scope.menuIconColor || '#fff';
+
+                    var menuOpenColor = $scope.menuOpenColor || '#2AC9AA';
+                    var menuOpenIcon = $scope.menuOpenIcon || 'ion-minus';
+                    var menuOpenIconColor = $scope.menuOpenIconColor || '#fff';
+
+                    $scope.setClose();
+
+                    //Has a footer
+                    $scope.hasFooter = $scope.hasFooter || false;
+                    if ($scope.hasFooter) {
+                        $scope.bottomValue = '60px';
+                    } else {
+                        $scope.bottomValue = '20px';
+                    }
+                }
+            };
+
+        })
+        .directive('ionFloatingItem', function () {
+
+            return {
+                restrict: 'E',
+                require: ['^ionFloatingMenu'],
+                scope: {
+                    click: '&',
+                    buttonColor: '@?',
+                    icon: '@',
+                    iconColor: '@?'},
+                template:
+                        '<li ng-click="click()" ng-style="{\'background-color\': \'{{buttonColor}}\' }">' +
+                        '<a ><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': \'{{iconColor}}\' }"></i></a>' +
+                        '</li>',
+                replace: true,
+                controller: function ($scope) {
+                    $scope.buttonColor = $scope.buttonColor || '#2AC9AA';
+                    $scope.iconColor = $scope.iconColor || '#fff';
+                }
+            };
+
+        })
+
+        ;

@@ -1,5 +1,5 @@
 # ion-floating-menu
-Menu and Button Material UI-like for Ionic applications
+Material UI-like Floating Action Button and Menu for Ionic applications
 
 ## Features
 
@@ -17,25 +17,39 @@ Menu and Button Material UI-like for Ionic applications
 
 Include the following file imports in your index.html (the example assumes ./lib/ion-floating-menu folder):
  
-    <link rel="stylesheet" href="lib/ion-floating-menu/dist/ion-floating-menu.css">
-    ...
-    <script src="lib/ion-floating-menu/dist/ion-floating-menu.js"></script>
+    ```
+    <link href="lib/ion-floating-menu/dist/ion-floating-menu.css" rel="stylesheet" type="text/css"/>
+        ...
+    <script src="lib/ion-floating-menu/dist/ion-floating-menu.js" type="text/javascript"></script>
+    ```
 
 #### Angular Dependency (app.js)
 Add `ion-floating-menu` as a module dependency of your angular module.
-
-    angular.module('MyApp', ['ionic', __ 'ion-floating-menu' __ ])
-      .config(function () {..});
+    
+    ```
+    angular.module('MyApp', ['ionic', 'ion-floating-menu'])
+      ...
+    ```
 
 ## Usage
 Add the `ion-floating-menu` directive in your template.
 Important put it before `ion-content`:
 
-#### ionic-plus-button
+#### ionic-floating-button
+
+Add the `ion-floating-button` directive in your template.
+
+Important: put it before and outside the `ion-content` node:
+
 ```
-<ionic-plus-button button-color="#2AC9AA" icon="ion-plus" iconColor="#fff" click="myEvent()">
-</ionic-plus-button>
+    <ion-floating-button click="myEvent()" has-footer="false" button-color="#2AC9AA" icon="ion-plus" iconColor="#fff">
+    </ion-floating-button>
+
+    <ion-content>
+        ...
 ```
+
+where `myEvent()` is trigger when you tap or click.
 
 ##### Config
 * _button-color_: CSS Color for the button
