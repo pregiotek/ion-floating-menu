@@ -59,7 +59,7 @@ Add the `ion-floating-menu` directive in your template.
 
 Important put it before `ion-content`.
 
-    <ion-floating-menu has-footer="true" menu-color="#000" menu-open-color="#000">
+    <ion-floating-menu>
         <ion-floating-item icon="ion-camera" click="myEvent()"></ion-floating-item>
         <ion-floating-item icon="ion-person" click="myEvent()"></ion-floating-item>
     </ion-floating-menu>
@@ -68,19 +68,19 @@ where `myEvent()` is trigger when you tap or click.
 
 #### Config
 
-<ion-floating-menu>:
+ion-floating-menu:
 * __menu-color__: CSS Color for the button (`#2AC9AA` by default)
-* __menu-open-color__: CSS Color for the button (`#2AC9AA` by default)
 * __menu-icon__: ionic icon (`ion-plus` by default; note that the `icon` class is already defined)
-* __menu-open-icon__: ionic icon (`ion-minus` by default; note that the `icon` class is already defined)
 * __menu-icon-color__: CSS Color for the icon (`#fff` by default) 
+* __menu-open-color__: CSS Color for the button (`#2AC9AA` by default)
+* __menu-open-icon__: ionic icon (`ion-minus` by default; note that the `icon` class is already defined)
 * __menu-open-icon-color__: CSS Color for the icon (`#fff` by default) 
 * __has-footer__: if the template has a footer, so it fixes the position (`false` by default)
 
-<ion-floating-item>:
+ion-floating-item:
 * __click__: event expression (required)
+* __icon__: ionic icon (required)
 * __button-color__: CSS Color for the button (`#2AC9AA` by default)
-* __icon__: ionic icon (`ion-plus` by default; note that the `icon` class is already defined)
 * __icon-color__: CSS Color for the icon (`#fff` by default) 
 
 
