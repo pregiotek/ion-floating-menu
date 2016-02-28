@@ -1,6 +1,5 @@
 {
     "name": "ion-floating-menu",
-    "version": "1.0.0",
     "authors": [
         "pregiotek <ndg@pregiotek.com>"
     ],
@@ -34,6 +33,7 @@
         "bower_components",
         "test",
         "tests",
-        "nbproject"
+        "nbproject",
+        "doc"
     ]
 }
