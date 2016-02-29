@@ -45,8 +45,9 @@ where `myEvent()` is trigger when you tap or click.
 
 #### Config
 
-* __click__: event expression (required)
+* __click__: event expression
 * __button-color__: CSS Color for the button (`#2AC9AA` by default)
+* __button-class__: CSS Class to apply your style to the button (alternative to `button-color`) 
 * __icon__: ionic icon (`ion-plus` by default; note that the `icon` class is already defined)
 * __icon-color__: CSS Color for the icon (`#fff` by default) 
 * __has-footer__: if the template has a footer, so it fixes the position (`false` by default)
@@ -81,6 +82,7 @@ ion-floating-item:
 * __click__: event expression (required)
 * __icon__: ionic icon (required)
 * __button-color__: CSS Color for the button (`#2AC9AA` by default)
+* __button-class__: CSS Class to apply your style to the button (alternative to `button-color`) 
 * __icon-color__: CSS Color for the icon (`#fff` by default) 
 
 
