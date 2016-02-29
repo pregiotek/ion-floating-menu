@@ -19,14 +19,15 @@ angular.module('ion-floating-menu', [])
             return {
                 restrict: 'E',
                 scope: {
-                    click: '&',
+                    click: '&?',
                     buttonColor: '@?',
+                    buttonClass: '@?',
                     icon: '@?',
                     iconColor: '@?',
                     hasFooter: '=?'},
                 template: '<ul id="floating-button" ng-style="{\'bottom\' : \'{{bottomValue}}\' }">' +
-                        '<li ng-style="{\'background-color\': \'{{buttonColor}}\' }">' +
-                        '<a ng-click="click()"><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': \'{{iconColor}}\' }"></i></a>' +
+                        '<li ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
+                        '<a ng-click="click()"><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
                         '</li>' +
                         '</ul>',
                 replace: true,
@@ -113,13 +114,14 @@ angular.module('ion-floating-menu', [])
                 restrict: 'E',
                 require: ['^ionFloatingMenu'],
                 scope: {
-                    click: '&',
+                    click: '&?',
                     icon: '@',
                     buttonColor: '@?',
+                    buttonClass: '@?',
                     iconColor: '@?'},
                 template:
-                        '<li ng-click="click()" ng-style="{\'background-color\': \'{{buttonColor}}\' }">' +
-                        '<a ><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': \'{{iconColor}}\' }"></i></a>' +
+                        '<li ng-click="click()" ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
+                        '<a ><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
                         '</li>',
                 replace: true,
                 controller: function ($scope) {
