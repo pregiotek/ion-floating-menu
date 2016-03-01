@@ -55,7 +55,6 @@ where `myEvent()` is trigger when you tap or click.
 ## Usage: ion-floating-menu
 
 ![Alt ion-floating-menu](/doc/ion-floating-menu.png)
-
 ![Alt ion-floating-menu](/doc/ion-floating-menu-2.png)
 
 Add the `ion-floating-menu` directive in your template.
