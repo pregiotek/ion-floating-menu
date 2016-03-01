@@ -81,6 +81,8 @@ ion-floating-menu:
 ion-floating-item:
 * __click__: event expression (required)
 * __icon__: ionic icon (required)
+* __text__: if you want to attach a lable to the button
+* __text-class__: CSS Class for the button. Note: add !important to the CSS statements if they are not applied correctly. 
 * __button-color__: CSS Color for the button (`#2AC9AA` by default)
 * __button-class__: CSS Class to apply your style to the button (alternative to `button-color`) 
 * __icon-color__: CSS Color for the icon (`#fff` by default) 
