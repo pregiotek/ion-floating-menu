@@ -63,7 +63,7 @@ angular.module('ion-floating-menu', [])
                             ng-class="{\'active\' : isOpen}" \n\
                             ng-click="open()">' +
                         '<div ng-transclude></div>' +
-                        '<span><li class="icon menu-icon" ng-class="icon" ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"></li></span>' +
+                        '<span><li class="menu-button icon menu-icon" ng-class="icon" ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"></li></span>' +
                         '</ul>',
                 replace: true,
                 transclude: true,
@@ -118,10 +118,12 @@ angular.module('ion-floating-menu', [])
                     icon: '@',
                     buttonColor: '@?',
                     buttonClass: '@?',
-                    iconColor: '@?'},
+                    iconColor: '@?',
+                    text: '@?',
+                    textClass: '@?'},
                 template:
                         '<li ng-click="click()" ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
-                        '<a ><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
+                        '<a><span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
                         '</li>',
                 replace: true,
                 controller: function ($scope) {
