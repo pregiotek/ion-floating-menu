@@ -24,10 +24,13 @@ angular.module('ion-floating-menu', [])
                     buttonClass: '@?',
                     icon: '@?',
                     iconColor: '@?',
-                    hasFooter: '=?'},
-                template: '<ul id="floating-button" ng-style="{\'bottom\' : \'{{bottomValue}}\' }">' +
-                        '<li ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
-                        '<a ng-click="click()"><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
+                    hasFooter: '=?',
+                    right: '@?',
+                    left: '@?',
+                    bottom: '@?'},
+                template: '<ul id="floating-button" ng-style="{\'bottom\' : \'{{bottomValue}}\', \'right\' : \'{{right}}\', \'left\' : \'{{left}}\'}">' +
+                        '<li ng-class="buttonClass" ng-style="{\'background-color\': \'{{buttonColor}}\' }">' +
+                        '<a ng-click="click()"><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': \'{{iconColor}}\' }"></i></a>' +
                         '</li>' +
                         '</ul>',
                 replace: true,
@@ -37,10 +40,18 @@ angular.module('ion-floating-menu', [])
                     $scope.icon = $scope.icon || 'ion-plus';
                     $scope.iconColor = $scope.iconColor || '#fff';
                     $scope.hasFooter = $scope.hasFooter || false;
-                    if ($scope.hasFooter) {
+                    
+                    if (!$scope.left){
+                        $scope.right = $scope.right || '20px';
+                    }
+                    
+                    if ($scope.hasFooter && !$scope.bottom) {
                         $scope.bottomValue = '60px';
-                    } else {
+                    } else if (!$scope.hasFooter && !$scope.bottom) {
                         $scope.bottomValue = '20px';
+                    } else {
+                        //Override the bottom value
+                        $scope.bottomValue = $scope.bottom;
                     }
                 }
             };
@@ -56,14 +67,17 @@ angular.module('ion-floating-menu', [])
                     menuColor: '@?',
                     menuIcon: '@?',
                     menuIconColor: '@?',
-                    hasFooter: '=?'
+                    hasFooter: '=?',
+                    left: '@?',
+                    right: '@?',
+                    bottom: '@?'
                 },
                 template: '<ul id="floating-menu"  \n\
-                            ng-style="{\'bottom\' : \'{{bottomValue}}\'}" \n\
+                            ng-style="{\'bottom\' : \'{{bottomValue}}\', \'right\' : \'{{right}}\', \'left\' : \'{{left}}\'}" \n\
                             ng-class="{\'active\' : isOpen}" \n\
                             ng-click="open()">' +
                         '<div ng-transclude></div>' +
-                        '<span><li class="menu-button icon menu-icon" ng-class="icon" ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"></li></span>' +
+                        '<span><li class="menu-button icon menu-icon" ng-class="icon" ng-style="{\'background-color\' : \'{{buttonColor}}\', \'color\': \'{{iconColor}}\' }"></li></span>' +
                         '</ul>',
                 replace: true,
                 transclude: true,
@@ -98,12 +112,19 @@ angular.module('ion-floating-menu', [])
                     var menuOpenIcon = $scope.menuOpenIcon || 'ion-minus';
                     var menuOpenIconColor = $scope.menuOpenIconColor || '#fff';
                     $scope.setClose();
+                    
+                    if (!$scope.left){
+                        $scope.right = $scope.right || '20px';
+                    }
+                    
                     //Has a footer
-                    $scope.hasFooter = $scope.hasFooter || false;
-                    if ($scope.hasFooter) {
+                    if ($scope.hasFooter && !$scope.bottom) {
                         $scope.bottomValue = '60px';
-                    } else {
+                    } else if (!$scope.hasFooter && !$scope.bottom) {
                         $scope.bottomValue = '20px';
+                    } else {
+                        //Override the bottom value
+                        $scope.bottomValue = $scope.bottom;
                     }
                 }
             };
@@ -123,7 +144,7 @@ angular.module('ion-floating-menu', [])
                     textClass: '@?'},
                 template:
                         '<li ng-click="click()" ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
-                        '<span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i>' +
+                        '<span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': \'{{iconColor}}\' }"></i>' +
                         '</li>',
                 replace: true,
                 controller: function ($scope) {
