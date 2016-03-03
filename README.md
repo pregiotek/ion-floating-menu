@@ -51,6 +51,9 @@ where `myEvent()` is trigger when you tap or click.
 * __icon__: ionic icon (`ion-plus` by default; note that the `icon` class is already defined)
 * __icon-color__: CSS Color for the icon (`#fff` by default) 
 * __has-footer__: if the template has a footer, so it fixes the position (`false` by default)
+* __bottom__: CSS value in pixel to change the distance from the bottom, e.g. 40px.
+* __left__: CSS value in pixel to change the distance from the left, e.g. 40px. If left is defined, `right` does not apply
+* __right__: CSS value in pixel to change the distance from the right, e.g. 40px. If left is defined, `left` does not apply
 
 ## Usage: ion-floating-menu
 
@@ -77,6 +80,9 @@ ion-floating-menu:
 * __menu-open-icon__: ionic icon (`ion-minus` by default; note that the `icon` class is already defined)
 * __menu-open-icon-color__: CSS Color for the icon (`#fff` by default) 
 * __has-footer__: if the template has a footer, so it fixes the position (`false` by default)
+* __bottom__: CSS value in pixel to change the distance from the bottom, e.g. 40px.
+* __left__: CSS value in pixel to change the distance from the left, e.g. 40px. If left is defined, `right` does not apply
+* __right__: CSS value in pixel to change the distance from the right, e.g. 40px. If left is defined, `left` does not apply
 
 ion-floating-item:
 * __click__: event expression (required)
