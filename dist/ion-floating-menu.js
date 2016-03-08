@@ -1,3 +1,16 @@
+/*!
+ * Copyright 2016 PREGIOTEK
+ * http://pregiotek.com/
+ *
+ * ion-floating-menu
+ * Material UI-like Floating Action Button and Menu for Ionic applications.
+ *
+ * By @ennedigi
+ * 
+ * Licensed under the MIT license. Please see LICENSE for more information.
+ *
+ */
+ 
 (function() {
     'use strict';
     
