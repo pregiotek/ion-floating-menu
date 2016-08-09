@@ -10,68 +10,12 @@
  * Licensed under the MIT license. Please see LICENSE for more information.
  *
  */
- 
-(function() {
-    'use strict';
-    
-    ionFloatingButton.$inject = ['$scope'];
-    function ionFloatingButton($scope){
-        $scope.buttonColor = $scope.buttonColor || '#2AC9AA';
-                    $scope.icon = $scope.icon || 'ion-plus';
-                    $scope.iconColor = $scope.iconColor || '#fff';
-                    $scope.hasFooter = $scope.hasFooter || false;
-                    if ($scope.hasFooter) {
-                        $scope.bottomValue = '60px';
-                    } else {
-                        $scope.bottomValue = '20px';
-                    }
-    }
-    
-    ionFloatingMenu.$inject   = ['$scope'];
-    function ionFloatingMenu($scope){
-        $scope.isOpen = false;
-                    $scope.open = function() {
-                        $scope.isOpen = !$scope.isOpen;
-                        if ($scope.isOpen) {
-                            $scope.setOpen();
-                        } else {
-                            $scope.setClose();
-                        }
-                    };
-                    $scope.setOpen = function() {
-                        $scope.buttonColor = menuOpenColor;
-                        $scope.icon = menuOpenIcon;
-                        $scope.iconColor = menuOpenIconColor;
-                    };
-                    $scope.setClose = function() {
-                        $scope.buttonColor = menuColor;
-                        $scope.icon = menuIcon;
-                        $scope.iconColor = menuIconColor;
-                    };
-                    var menuColor = $scope.menuColor || '#2AC9AA';
-                    var menuIcon = $scope.menuIcon || 'ion-plus';
-                    var menuIconColor = $scope.menuIconColor || '#fff';
-                    var menuOpenColor = $scope.menuOpenColor || '#2AC9AA';
-                    var menuOpenIcon = $scope.menuOpenIcon || 'ion-minus';
-                    var menuOpenIconColor = $scope.menuOpenIconColor || '#fff';
-                    $scope.setClose();
-                    $scope.hasFooter = $scope.hasFooter || false;
-                    if ($scope.hasFooter) {
-                        $scope.bottomValue = '60px';
-                    } else {
-                        $scope.bottomValue = '20px';
-                    }
-    }
-    
-    ionFloatingItem.$inject   = ['$scope'];
-    function ionFloatingItem($scope){
-         $scope.buttonColor = $scope.buttonColor || '#2AC9AA';
-         $scope.iconColor = $scope.iconColor || '#fff';
-    }
-    
+
+
 angular.module('ion-floating-menu', [])
-        
+
         .directive('ionFloatingButton', function () {
+
             return {
                 restrict: 'E',
                 scope: {
@@ -88,10 +32,21 @@ angular.module('ion-floating-menu', [])
                         '</ul>',
                 replace: true,
                 transclude: true,
-                controller: ionFloatingButton
+                controller: function ($scope) {
+                    $scope.buttonColor = $scope.buttonColor || '#2AC9AA';
+                    $scope.icon = $scope.icon || 'ion-plus';
+                    $scope.iconColor = $scope.iconColor || '#fff';
+                    $scope.hasFooter = $scope.hasFooter || false;
+                    if ($scope.hasFooter) {
+                        $scope.bottomValue = '60px';
+                    } else {
+                        $scope.bottomValue = '20px';
+                    }
+                }
             };
         })
         .directive('ionFloatingMenu', function () {
+
             return {
                 restrict: 'E',
                 scope: {
@@ -108,7 +63,8 @@ angular.module('ion-floating-menu', [])
                             ng-class="{\'active\' : isOpen}" \n\
                             ng-click="open()">' +
                         '<div ng-transclude></div>' +
-                        '<span><li class="menu-button icon menu-icon" ng-class="icon" ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"></li></span>' +
+                        '<span><li class="menu-button icon"' +
+                        'ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"><i class="material-icons">{{menuIcon}}</i></li></span>' +
                         '</ul>',
                 replace: true,
                 transclude: true,
@@ -116,10 +72,45 @@ angular.module('ion-floating-menu', [])
                 {
                     element.find('div').replaceWith(transclude());
                 },
-                controller: ionFloatingMenu
+                controller: function ($scope) {
+                    $scope.isOpen = false;
+                    $scope.open = function () {
+                        $scope.isOpen = !$scope.isOpen;
+                        if ($scope.isOpen) {
+                            $scope.setOpen();
+                        } else {
+                            $scope.setClose();
+                        }
+                    };
+                    $scope.setOpen = function () {
+                        $scope.buttonColor = menuOpenColor;
+                        $scope.icon = menuOpenIcon;
+                        $scope.iconColor = menuOpenIconColor;
+                    };
+                    $scope.setClose = function () {
+                        $scope.buttonColor = menuColor;
+                        $scope.icon = menuIcon;
+                        $scope.iconColor = menuIconColor;
+                    };
+                    var menuColor = $scope.menuColor || '#2AC9AA';
+                    var menuIcon = $scope.menuIcon || 'ion-plus';
+                    var menuIconColor = $scope.menuIconColor || '#fff';
+                    var menuOpenColor = $scope.menuOpenColor || '#2AC9AA';
+                    var menuOpenIcon = $scope.menuOpenIcon || 'ion-minus';
+                    var menuOpenIconColor = $scope.menuOpenIconColor || '#fff';
+                    $scope.setClose();
+                    //Has a footer
+                    $scope.hasFooter = $scope.hasFooter || false;
+                    if ($scope.hasFooter) {
+                        $scope.bottomValue = '60px';
+                    } else {
+                        $scope.bottomValue = '20px';
+                    }
+                }
             };
         })
         .directive('ionFloatingItem', function () {
+
             return {
                 restrict: 'E',
                 require: ['^ionFloatingMenu'],
@@ -136,7 +127,9 @@ angular.module('ion-floating-menu', [])
                         '<span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i>' +
                         '</li>',
                 replace: true,
-                controller: ionFloatingItem
+                controller: function ($scope) {
+                    $scope.buttonColor = $scope.buttonColor || '#2AC9AA';
+                    $scope.iconColor = $scope.iconColor || '#fff';
+                }
             };
         });
-})();
