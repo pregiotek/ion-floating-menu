@@ -56,15 +56,14 @@ angular.module('ion-floating-menu', [])
                     menuColor: '@?',
                     menuIcon: '@?',
                     menuIconColor: '@?',
-                    hasFooter: '=?',
-                    isOnline: '=?'
+                    hasFooter: '=?'
                 },
                 template: '<ul id="floating-menu"  \n\
                             ng-style="{\'bottom\' : \'{{bottomValue}}\'}" \n\
                             ng-class="{\'active\' : isOpen}" \n\
                             ng-click="open()">' +
                         '<div ng-transclude></div>' +
-                        '<span class="button-add-offline"><li class="menu-button"' +
+                        '<span><li class="menu-button"' +
                         'ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"' +
                         ' ng-class="{\'button-add-offline\':(!isOnline)}"><i class="material-icons">{{menuIcon}}</i></li></span>' +
                         '</ul>',
@@ -74,9 +73,12 @@ angular.module('ion-floating-menu', [])
                 {
                     element.find('div').replaceWith(transclude());
                 },
-                controller: function ($scope) {
+                controller: function ($scope, $rootScope) {
                     $scope.isOpen = false;
                     $scope.isOnline = true;
+                    $rootScope.$watch('online', function(newVal){
+                        console.log(newVal);
+                    });
                     $scope.open = function () {
                         $scope.isOpen = !$scope.isOpen;
                         if ($scope.isOpen) {
@@ -85,6 +87,22 @@ angular.module('ion-floating-menu', [])
                             $scope.setClose();
                         }
                     };
+                    $scope.setOpen = function () {
+                        $scope.buttonColor = menuOpenColor;
+                        $scope.icon = menuOpenIcon;
+                        $scope.iconColor = menuOpenIconColor;
+                    };
+                    $scope.setClose = function () {
+                        $scope.buttonColor = menuColor;
+                        $scope.icon = menuIcon;
+                        $scope.iconColor = menuIconColor;
+                    };
+                    //$scope.online = function () {
+                    //    $scope.isOnline = !$scope.isOnline;
+                    //    if (!$scope.isOnline) {
+                    //        $scope.bottomValue = '200px';
+                    //    }
+                    //};
                     $scope.setOpen = function () {
                         $scope.buttonColor = menuOpenColor;
                         $scope.icon = menuOpenIcon;
@@ -108,11 +126,6 @@ angular.module('ion-floating-menu', [])
                         $scope.bottomValue = '60px';
                     } else {
                         $scope.bottomValue = '20px';
-                    }
-                    // Is online
-                    $scope.isOnline = $scope.isOnline || true;
-                    if (!$scope.isOnline) {
-                        $scope.bottomValue = '45px';
                     }
                 }
             };
