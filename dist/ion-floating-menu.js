@@ -57,7 +57,7 @@ angular.module('ion-floating-menu', [])
                     menuIcon: '@?',
                     menuIconColor: '@?',
                     hasFooter: '=?',
-                    isOnline: '@?'
+                    isOnline: '=?'
                 },
                 template: '<ul id="floating-menu"  \n\
                             ng-style="{\'bottom\' : \'{{bottomValue}}\'}" \n\
@@ -76,6 +76,7 @@ angular.module('ion-floating-menu', [])
                 },
                 controller: function ($scope) {
                     $scope.isOpen = false;
+                    $scope.isOnline = true;
                     $scope.open = function () {
                         $scope.isOpen = !$scope.isOpen;
                         if ($scope.isOpen) {
@@ -107,6 +108,11 @@ angular.module('ion-floating-menu', [])
                         $scope.bottomValue = '60px';
                     } else {
                         $scope.bottomValue = '20px';
+                    }
+                    // Is online
+                    $scope.isOnline = $scope.isOnline || true;
+                    if (!$scope.isOnline) {
+                        $scope.bottomValue = '45px';
                     }
                 }
             };
