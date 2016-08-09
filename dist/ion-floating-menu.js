@@ -56,15 +56,17 @@ angular.module('ion-floating-menu', [])
                     menuColor: '@?',
                     menuIcon: '@?',
                     menuIconColor: '@?',
-                    hasFooter: '=?'
+                    hasFooter: '=?',
+                    isOnline: '@?'
                 },
                 template: '<ul id="floating-menu"  \n\
                             ng-style="{\'bottom\' : \'{{bottomValue}}\'}" \n\
                             ng-class="{\'active\' : isOpen}" \n\
                             ng-click="open()">' +
                         '<div ng-transclude></div>' +
-                        '<span><li class="menu-button icon"' +
-                        'ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"><i class="material-icons">{{menuIcon}}</i></li></span>' +
+                        '<span class="button-add-offline"><li class="menu-button"' +
+                        'ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"' +
+                        ' ng-class="{\'button-add-offline\':(!isOnline)}"><i class="material-icons">{{menuIcon}}</i></li></span>' +
                         '</ul>',
                 replace: true,
                 transclude: true,
