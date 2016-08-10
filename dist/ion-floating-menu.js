@@ -49,6 +49,11 @@ angular.module('ion-floating-menu', [])
 
             return {
                 restrict: 'E',
+                compile: function(tElement, attr) {
+                    attr.$observe('isOnline', function(data) {
+                        console.log("Updated online ", data);
+                    }, true);
+                },
                 scope: {
                     menuOpenColor: '@?',
                     menuOpenIcon: '@?',
@@ -56,16 +61,17 @@ angular.module('ion-floating-menu', [])
                     menuColor: '@?',
                     menuIcon: '@?',
                     menuIconColor: '@?',
-                    hasFooter: '=?'
+                    hasFooter: '=?',
+                    isOnline: '=?'
                 },
                 template: '<ul id="floating-menu"  \n\
                             ng-style="{\'bottom\' : \'{{bottomValue}}\'}" \n\
-                            ng-class="{\'active\' : isOpen}" \n\
+                            ng-class="{\'active\' : isOpen, \'button-add-offline\':(!isOnline)}" \n\
                             ng-click="open()">' +
                         '<div ng-transclude></div>' +
                         '<span><li class="menu-button"' +
                         'ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"' +
-                        ' ng-class="{\'button-add-offline\':(!isOnline)}"><i class="material-icons">{{menuIcon}}</i></li></span>' +
+                        '><i class="material-icons">{{menuIcon}}</i></li></span>' +
                         '</ul>',
                 replace: true,
                 transclude: true,
@@ -77,7 +83,9 @@ angular.module('ion-floating-menu', [])
                     $scope.isOpen = false;
                     $scope.isOnline = true;
                     $rootScope.$watch('online', function(newVal){
-                        console.log(newVal);
+                        if(!newVal){
+                            $scope.bottomValue = '60px';
+                        }
                     });
                     $scope.open = function () {
                         $scope.isOpen = !$scope.isOpen;
@@ -97,12 +105,6 @@ angular.module('ion-floating-menu', [])
                         $scope.icon = menuIcon;
                         $scope.iconColor = menuIconColor;
                     };
-                    //$scope.online = function () {
-                    //    $scope.isOnline = !$scope.isOnline;
-                    //    if (!$scope.isOnline) {
-                    //        $scope.bottomValue = '200px';
-                    //    }
-                    //};
                     $scope.setOpen = function () {
                         $scope.buttonColor = menuOpenColor;
                         $scope.icon = menuOpenIcon;
