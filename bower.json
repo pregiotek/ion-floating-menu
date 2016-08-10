@@ -1,7 +1,8 @@
 {
     "name": "ion-floating-menu",
     "authors": [
-        "pregiotek <ndg@pregiotek.com>"
+        "pregiotek <ndg@pregiotek.com>",
+        "HefferAlaaf <lars.ka@gmx.de>"
     ],
     "description": "Material UI-like Floating Action Button and Menu for Ionic applications",
     "main": [
@@ -22,10 +23,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/pregiotek/ion-floating-menu.git"
+        "url": "https://github.com/HefferAlaaf/ion-floating-menu.git"
     },
     "license": "MIT",
-    "homepage": "https://github.com/pregiotek/ion-floating-menu",
+    "homepage": "https://github.com/HefferAlaaf/ion-floating-menu",
     "private": false,
     "ignore": [
         "**/.*",
