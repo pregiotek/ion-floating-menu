@@ -1,6 +1,8 @@
 # ion-floating-menu
 Material UI-like Floating Action Button and Menu for Ionic applications
 
+\[enhanced\] added placement attribute to position floating menu in the right or left bottom corner
+
 ## Features
 
 * Button similar to the Material UI Floating Action Button
@@ -81,6 +83,7 @@ ion-floating-menu:
 * __menu-open-icon__: ionic icon (`ion-minus` by default; note that the `icon` class is already defined)
 * __menu-open-icon-color__: CSS Color for the icon (`#fff` by default) 
 * __has-footer__: if the template has a footer, so it fixes the position (`false` by default)
+* __placement__: ability to place the floating menu in the `left` or `right` (default) bottom corner. Menu item text aligns accordingly
 * __bottom__: CSS value in pixel to change the distance from the bottom, e.g. 40px.
 * __left__: CSS value in pixel to change the distance from the left, e.g. 40px. If left is defined, `right` does not apply
 * __right__: CSS value in pixel to change the distance from the right, e.g. 40px. If left is defined, `left` does not apply
