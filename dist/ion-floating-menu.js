@@ -91,7 +91,7 @@
                 controller: ionFloatingButton
             };
         })
-        .directive('ionFloatingMenu', function ($compile) {
+        .directive('ionFloatingMenu', function () {
             return {
                 restrict: 'E',
                 scope: {
