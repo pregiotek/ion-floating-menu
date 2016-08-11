@@ -1,0 +1,22 @@
+{
+  "name": "ion-floating-menu",
+  "version": "1.0.0",
+  "description": "Material UI-like Floating Action Button and Menu for Ionic applications",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drdpedroso/ion-floating-menu.git"
+  },
+  "author": "Eduardo Pedroso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drdpedroso/ion-floating-menu/issues"
+  },
+  "homepage": "https://github.com/drdpedroso/ion-floating-menu#readme"
+}

@@ -16,6 +16,7 @@
 #floating-button {
     bottom: 20px;
     position: fixed;
+    right: 20px;
     z-index : 9999;
     width: 60px;
     height: 60px;
@@ -69,6 +70,7 @@
 
 #floating-menu {
     position: fixed;
+    right: 20px;
     z-index: 9999;
     width: 60px;
     height: 60px;
@@ -118,6 +120,12 @@
     box-shadow: 0.5px 2px 2px 0.5px rgba(0, 0, 0, 0.2);
 }
 
+#floating-menu li i{
+    font-size: 20px;
+    left: 0;
+    top: 0;
+}
+
 
 #floating-menu li span.label-container{
     margin-right: 2px;
@@ -127,7 +135,7 @@
     top: 0px;
     overflow: hidden;
     right: 75px;
-    width: 400px;
+    width: 100px;
     text-align: right;
     font-size: 15px;
 }
@@ -152,9 +160,9 @@
 }*/
 
 #floating-menu > li  {
-    transition: all .3s;
-    -webkit-transition: all .3s;
-    -moz-transition: .3s;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: .4s;
 }
 
 #floating-menu.active > li:nth-child(1) {
@@ -170,11 +178,12 @@
     transition-delay: 150ms; -webkit-transition-delay: 150ms; top: -280px;
 }
 #floating-menu.active > li:nth-child(5){
-    transition-delay: 160ms; -webkit-transition-delay: 160ms; top: -350px;
+    transition-delay: 200ms; -webkit-transition-delay: 200ms; top: -350px;
 }
 #floating-menu.active > li:nth-child(6){
-    transition-delay: 170ms; -webkit-transition-delay: 170ms; top: -420px;
+    transition-delay: 250ms; -webkit-transition-delay: 250ms; top: -420px;
 }
-#floating-menu.active > li:nth-child(7){
-    transition-delay: 180ms; -webkit-transition-delay: 180ms; top: -490px;
+
+.is-offline {
+    bottom: 45px !important;
 }

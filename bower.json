@@ -1,7 +1,8 @@
 {
-    "name": "ion-floating-menu",
+    "name": "custom-ionic-float-button",
     "authors": [
-        "pregiotek <ndg@pregiotek.com>"
+        "pregiotek <ndg@pregiotek.com>",
+        "drdpedroso <drdpedroso@gmail.com>"
     ],
     "description": "Material UI-like Floating Action Button and Menu for Ionic applications",
     "main": [
@@ -22,10 +23,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/pregiotek/ion-floating-menu.git"
+        "url": "https://github.com/drdpedroso/ion-floating-menu"
     },
     "license": "MIT",
-    "homepage": "https://github.com/pregiotek/ion-floating-menu",
+    "homepage": "https://github.com/drdpedroso/ion-floating-menu",
     "private": false,
     "ignore": [
         "**/.*",
