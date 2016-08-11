@@ -73,6 +73,9 @@ Important put it before `ion-content`.
 
 where `myEvent()` is trigger when you tap or click.
 
+**[New Feature]** Added listening to 'collapse-floating-menu' which may be broadcasted to close 
+all open menus in view
+
 #### Config
 
 ion-floating-menu:

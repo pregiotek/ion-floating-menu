@@ -77,7 +77,7 @@ angular.module('ion-floating-menu', [])
                     $scope.isOpen = false;
 	                // by default, the button-menu is placed in the bottom right corner
 	                $scope.bottomRight = true;
-	                $scope.bottomLeft = true;
+	                $scope.bottomLeft = false;
 
 	                $scope.open = function () {
                         $scope.isOpen = !$scope.isOpen;
@@ -121,6 +121,13 @@ angular.module('ion-floating-menu', [])
                     } else {
                         $scope.bottomValue = '20px';
                     }
+
+                    $scope.$on('floating-menu-collapse', function(event, eventArgs){
+	                    if ($scope.isOpen) {
+		                    $scope.isOpen = false;
+		                    $scope.setClose();
+	                    }
+                    });
 	                
 
                 }
