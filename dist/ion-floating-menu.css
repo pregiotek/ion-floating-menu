@@ -16,6 +16,7 @@
 #floating-button {
     bottom: 20px;
     position: fixed;
+    right: 20px;
     z-index : 9999;
     width: 60px;
     height: 60px;
@@ -69,6 +70,7 @@
 
 #floating-menu {
     position: fixed;
+    right: 20px;
     z-index: 9999;
     width: 60px;
     height: 60px;

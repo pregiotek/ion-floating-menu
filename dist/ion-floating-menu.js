@@ -83,7 +83,7 @@ angular.module('ion-floating-menu', [])
                     hasFooter: '=?'},
                 template: '<ul id="floating-button" ng-style="{\'bottom\' : \'{{bottomValue}}\' }">' +
                         '<li ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
-                        '<a ng-click="click($event)"><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
+                        '<a ng-click="click()"><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
                         '</li>' +
                         '</ul>',
                 replace: true,
@@ -106,7 +106,7 @@ angular.module('ion-floating-menu', [])
                 template: '<ul id="floating-menu"  \n\
                             ng-style="{\'bottom\' : \'{{bottomValue}}\'}" \n\
                             ng-class="{\'active\' : isOpen}" \n\
-                            ng-click="open($event)">' +
+                            ng-click="open()">' +
                         '<div ng-transclude></div>' +
                         '<span><li class="menu-button icon menu-icon" ng-class="icon" ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"></li></span>' +
                         '</ul>',
@@ -132,7 +132,7 @@ angular.module('ion-floating-menu', [])
                     text: '@?',
                     textClass: '@?'},
                 template:
-                        '<li ng-click="click($event)" ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
+                        '<li ng-click="click()" ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
                         '<span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i>' +
                         '</li>',
                 replace: true,
