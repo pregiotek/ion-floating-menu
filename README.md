@@ -54,6 +54,7 @@ where `myEvent()` is trigger when you tap or click.
 * __bottom__: CSS value in pixel to change the distance from the bottom, e.g. 40px.
 * __left__: CSS value in pixel to change the distance from the left, e.g. 40px. If left is defined, `right` does not apply
 * __right__: CSS value in pixel to change the distance from the right, e.g. 40px. If left is defined, `left` does not apply
+* __is-centered__: `true` to center the button
 
 ## Usage: ion-floating-menu
 
@@ -94,6 +95,18 @@ ion-floating-item:
 * __button-color__: CSS Color for the button (`#2AC9AA` by default)
 * __button-class__: CSS Class to apply your style to the button (alternative to `button-color`) 
 * __icon-color__: CSS Color for the icon (`#fff` by default) 
+
+#### Events
+
+ion-floating-menu:
+* __floating-menu:open__: Triggered when the menu opens
+* __floating-menu:close__: Triggered when the menu closes
+
+For example
+
+    $scope.$on('floating-menu:open', function(){
+                        ... 
+    });
 
 
 ## Questions?
