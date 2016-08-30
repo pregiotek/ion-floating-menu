@@ -4,7 +4,7 @@ Material UI-like Floating Action Button and Menu for Ionic applications
 ## Features
 
 * Button similar to the Material UI Floating Action Button
-* Menu similar to the Material UI Floating Action Button
+* Menu similar to the Material UI Menu 
 
 ## Setup
 
@@ -35,7 +35,7 @@ Add the `ion-floating-button` directive in your template.
 
 Important: put it before and outside the `ion-content` node:
 
-    <ion-floating-button click="myEvent()" has-footer="false" button-color="#2AC9AA" icon="ion-plus" iconColor="#fff">
+    <ion-floating-button click="myEvent()" has-footer="false" button-color="#2AC9AA" icon="ion-plus" icon-color="#fff">
     </ion-floating-button>
 
     <ion-content>
