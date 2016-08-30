@@ -84,6 +84,7 @@ ion-floating-menu:
 * __bottom__: CSS value in pixel to change the distance from the bottom, e.g. 40px.
 * __left__: CSS value in pixel to change the distance from the left, e.g. 40px. If left is defined, `right` does not apply
 * __right__: CSS value in pixel to change the distance from the right, e.g. 40px. If left is defined, `left` does not apply
+* __backdrop__: if true the Ionic backdrop is applied as the menu open. Important: place yout ion-floating-menu tag OUTSIDE the ion-pane otherwise it will not be clickable (see demo/menu-with-backdrop.html)
 
 ion-floating-item:
 * __click__: event expression (required)
