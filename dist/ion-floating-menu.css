@@ -16,6 +16,7 @@
 #floating-button {
     bottom: 20px;
     position: fixed;
+    right: 20px;
     z-index : 9999;
     width: 60px;
     height: 60px;
@@ -32,6 +33,13 @@
     padding: 0;
     border: none;
     border-radius: 50%;
+}
+
+#floating-menu .center{
+    margin-left: auto; 
+    margin-right: auto; 
+    left: 0; 
+    right: 0; 
 }
 
 #floating-button>li {
@@ -69,6 +77,7 @@
 
 #floating-menu {
     position: fixed;
+    right: 20px;
     z-index: 9999;
     width: 60px;
     height: 60px;
@@ -86,8 +95,14 @@
     border-radius: 50%;
 }
 
++#floating-menu li i{
+    font-size: 20px;
+    left: 0;
+    top: 0;
+}
+
 #floating-menu li.menu-button {
-    z-index: 1;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
