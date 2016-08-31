@@ -37,7 +37,7 @@
                     '<a><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
                     '</li>' +
                     '</ul>',
-            replace: false,
+            replace: true,
             transclude: true,
             controller: ionFloatingButtonCtrl
         };
