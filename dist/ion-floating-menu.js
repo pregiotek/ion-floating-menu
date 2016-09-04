@@ -78,7 +78,7 @@
                     '<div ng-transclude></div>' +
                     '<span><li class="menu-button icon menu-icon" ng-class="icon" ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"></li></span>' +
                     '</ul>',
-            replace: true,
+            replace: false,
             transclude: true,
             link: function (scope, element, attrs, ctrl, transclude)
             {
