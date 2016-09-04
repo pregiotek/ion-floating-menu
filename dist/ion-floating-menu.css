@@ -174,30 +174,30 @@
     font-size: 0.8em;
 }*/
 
-#floating-menu > li  {
+#floating-menu ion-floating-item > li  {
     transition: all .3s;
     -webkit-transition: all .3s;
     -moz-transition: .3s;
 }
 
-#floating-menu.active > li:nth-child(1) {
+#floating-menu.active ion-floating-item:nth-child(1) > li {
     transition-delay: 0ms; -webkit-transition-delay: 0ms; top: -70px;
 }
-#floating-menu.active > li:nth-child(2) {
+#floating-menu.active ion-floating-item:nth-child(2) > li {
     transition-delay: 50ms; -webkit-transition-delay: 50ms; top: -140px;
 }
-#floating-menu.active > li:nth-child(3){
+#floating-menu.active ion-floating-item:nth-child(3) > li {
     transition-delay: 100ms; -webkit-transition-delay: 100ms; top: -210px;
 }
-#floating-menu.active > li:nth-child(4){
+#floating-menu.active ion-floating-item:nth-child(4) > li {
     transition-delay: 150ms; -webkit-transition-delay: 150ms; top: -280px;
 }
-#floating-menu.active > li:nth-child(5){
+#floating-menu.active ion-floating-item:nth-child(5) > li {
     transition-delay: 160ms; -webkit-transition-delay: 160ms; top: -350px;
 }
-#floating-menu.active > li:nth-child(6){
+#floating-menu.active ion-floating-item:nth-child(6) > li {
     transition-delay: 170ms; -webkit-transition-delay: 170ms; top: -420px;
 }
-#floating-menu.active > li:nth-child(7){
+#floating-menu.active ion-floating-item:nth-child(7) > li {
     transition-delay: 180ms; -webkit-transition-delay: 180ms; top: -490px;
 }

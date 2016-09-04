@@ -104,7 +104,7 @@
                     '<li ng-click="click()" ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
                     '<span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i>' +
                     '</li>',
-            replace: true,
+            replace: false,
             controller: ionFloatingItemCtrl
         };
     }
