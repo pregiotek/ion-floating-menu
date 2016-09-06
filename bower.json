@@ -23,10 +23,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/HefferAlaaf/ion-floating-menu.git"
+        "url": "https://github.com/COMLINE-AG/ion-floating-menu.git"
     },
     "license": "MIT",
-    "homepage": "https://github.com/HefferAlaaf/ion-floating-menu",
+    "homepage": "https://github.com/COMLINE-AG/ion-floating-menu",
     "private": false,
     "ignore": [
         "**/.*",
