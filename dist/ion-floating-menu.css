@@ -162,6 +162,7 @@
 
 #floating-menu.active li{
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    top: 0;
 }
 
 /*#floating-menu li {
@@ -180,24 +181,32 @@
     -moz-transition: .3s;
 }
 
+
 #floating-menu.active ion-floating-item:nth-child(1) > li {
-    transition-delay: 0ms; -webkit-transition-delay: 0ms; top: -70px;
+    transform: translateY(-70px);
+    transition-delay: 0ms; -webkit-transition-delay: 0ms;
 }
 #floating-menu.active ion-floating-item:nth-child(2) > li {
-    transition-delay: 50ms; -webkit-transition-delay: 50ms; top: -140px;
+    transform: translateY(-140px);
+    transition-delay: 50ms; -webkit-transition-delay: 50ms;
 }
 #floating-menu.active ion-floating-item:nth-child(3) > li {
-    transition-delay: 100ms; -webkit-transition-delay: 100ms; top: -210px;
+    transform: translateY(-210px);
+    transition-delay: 100ms; -webkit-transition-delay: 100ms;
 }
 #floating-menu.active ion-floating-item:nth-child(4) > li {
-    transition-delay: 150ms; -webkit-transition-delay: 150ms; top: -280px;
+    transform: translateY(-280px);
+    transition-delay: 150ms; -webkit-transition-delay: 150ms;
 }
 #floating-menu.active ion-floating-item:nth-child(5) > li {
-    transition-delay: 160ms; -webkit-transition-delay: 160ms; top: -350px;
+    transform: translateY(-350px);
+    transition-delay: 160ms; -webkit-transition-delay: 160ms;
 }
 #floating-menu.active ion-floating-item:nth-child(6) > li {
-    transition-delay: 170ms; -webkit-transition-delay: 170ms; top: -420px;
+    transform: translateY(-420px);
+    transition-delay: 170ms; -webkit-transition-delay: 170ms;
 }
 #floating-menu.active ion-floating-item:nth-child(7) > li {
-    transition-delay: 180ms; -webkit-transition-delay: 180ms; top: -490px;
+    transform: translateY(-490px);
+    transition-delay: 180ms; -webkit-transition-delay: 180ms;
 }
