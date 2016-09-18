@@ -127,6 +127,10 @@
     font-size: 20px;
 }
 
+#floating-menu img.menu-icon{
+    font-size: 20px;
+}
+
 #floating-menu li i{
     font-size: 20px;
     left: 0;

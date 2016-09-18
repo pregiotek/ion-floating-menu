@@ -97,6 +97,9 @@ ion-floating-item:
 * __button-color__: CSS Color for the button (`#2AC9AA` by default)
 * __button-class__: CSS Class to apply your style to the button (alternative to `button-color`) 
 * __icon-color__: CSS Color for the icon (`#fff` by default) 
+* __icon-image-path__: If you want to use an icon image rather than a class, you can specify the image path here
+* __icon-image-class__: CSS Class to apply your style to the icon image
+
 
 #### Events
 
