@@ -31,10 +31,12 @@
                 icon: '@?',
                 iconColor: '@?',
                 hasFooter: '=?',
-                isCentered: '=?'},
+                isCentered: '=?',
+                text: '@?',
+                textClass: '@?'},
             template: '<ul ng-click="click()" id="floating-button" ng-class="{\'center\': isCentered}" ng-style="{\'bottom\' : \'{{bottomValue}}\' }">' +
                     '<li ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
-                    '<a><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
+                    '<a><span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
                     '</li>' +
                     '</ul>',
             replace: false,

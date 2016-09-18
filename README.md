@@ -55,6 +55,8 @@ where `myEvent()` is trigger when you tap or click.
 * __left__: CSS value in pixel to change the distance from the left, e.g. 40px. If left is defined, `right` does not apply
 * __right__: CSS value in pixel to change the distance from the right, e.g. 40px. If left is defined, `left` does not apply
 * __is-centered__: `true` to center the button
+* __text__: if you want to attach a lable to the button
+* __text-class__: CSS Class for the button. Note: add !important to the CSS statements if they are not applied correctly. 
 
 ## Usage: ion-floating-menu
 

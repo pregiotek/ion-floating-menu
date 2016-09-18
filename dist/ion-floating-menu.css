@@ -69,6 +69,30 @@
     font-size: 20px;
 }
 
+#floating-button li span.label{
+    margin-right: 2px;
+    color: gray;
+    background-color: white;
+    padding: 6px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    box-shadow: 0.5px 2px 2px 0.5px rgba(0, 0, 0, 0.2);
+}
+
+
+#floating-button li span.label-container{
+    margin-right: 2px;
+    position: absolute;
+    display: inline-block;
+    top: 0px;
+    overflow: hidden;
+    right: 75px;
+    width: 400px;
+    text-align: right;
+    font-size: 15px;
+}
+
+
 
 /*floating-menu*/
 
