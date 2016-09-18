@@ -6,7 +6,7 @@
  * Material UI-like Floating Action Button and Menu for Ionic applications.
  *
  * By @ennedigi
- * 
+ *
  * Licensed under the MIT license. Please see LICENSE for more information.
  *
  */
@@ -32,17 +32,17 @@
                 iconColor: '@?',
                 hasFooter: '=?',
                 isCentered: '=?'},
-            template: '<ul id="floating-button" ng-class="{\'center\': isCentered}" ng-style="{\'bottom\' : \'{{bottomValue}}\' }">' +
+            template: '<ul ng-click="click()" id="floating-button" ng-class="{\'center\': isCentered}" ng-style="{\'bottom\' : \'{{bottomValue}}\' }">' +
                     '<li ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
-                    '<a ng-click="click()"><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
+                    '<a><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
                     '</li>' +
                     '</ul>',
-            replace: false,
+            replace: true,
             transclude: true,
             controller: ionFloatingButtonCtrl
         };
     }
-    
+
     ionFloatingButtonCtrl.$inject = ['$scope'];
     function ionFloatingButtonCtrl($scope) {
         $scope.buttonColor = $scope.buttonColor || '#2AC9AA';
@@ -50,7 +50,7 @@
         $scope.iconColor = $scope.iconColor || '#fff';
         $scope.hasFooter = $scope.hasFooter || false;
         $scope.isCentered = $scope.isCentered || false;
-        
+
         if ($scope.hasFooter) {
             $scope.bottomValue = '60px';
         } else {
@@ -124,7 +124,7 @@
             $scope.buttonColor = menuOpenColor;
             $scope.icon = menuOpenIcon;
             $scope.iconColor = menuOpenIconColor;
-            
+
             if (backdrop){
                 $ionicBackdrop.retain();
              }
@@ -153,7 +153,7 @@
         } else {
             $scope.bottomValue = '20px';
         }
-        
+
     }
 
     ionFloatingItemCtrl.$inject = ['$scope'];
