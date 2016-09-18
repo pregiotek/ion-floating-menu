@@ -33,8 +33,9 @@
                 hasFooter: '=?',
                 isCentered: '=?',
                 text: '@?',
-                textClass: '@?'},
-            template: '<ul ng-click="click()" id="floating-button" ng-class="{\'center\': isCentered}" ng-style="{\'bottom\' : \'{{bottomValue}}\' }">' +
+                textClass: '@?',
+                bottom: '@?'},
+            template: '<ul ng-click="click()" id="floating-button" ng-class="{\'center\': isCentered}" ng-style="{\'bottom\' : \'{{bottom}}\' }">' +
                     '<li ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
                     '<a><span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
                     '</li>' +
@@ -54,9 +55,9 @@
         $scope.isCentered = $scope.isCentered || false;
 
         if ($scope.hasFooter) {
-            $scope.bottomValue = '60px';
+            $scope.bottom = '60px';
         } else {
-            $scope.bottomValue = '20px';
+            $scope.bottom = $scope.bottom || '20px';
         }
     }
 
@@ -71,10 +72,11 @@
                 menuIcon: '@?',
                 menuIconColor: '@?',
                 hasFooter: '=?',
-                backdrop: '=?'
+                backdrop: '=?',
+                bottom: '@?'
             },
             template: '<ul id="floating-menu"  \n\
-                            ng-style="{\'bottom\' : \'{{bottomValue}}\'}" \n\
+                            ng-style="{\'bottom\' : \'{{bottom}}\'}" \n\
                             ng-class="{\'active\' : isOpen}" \n\
                             ng-click="open()">' +
                     '<div ng-transclude></div>' +
@@ -155,9 +157,9 @@
         $scope.setClose();
         $scope.hasFooter = $scope.hasFooter || false;
         if ($scope.hasFooter) {
-            $scope.bottomValue = '60px';
+            $scope.bottom = '60px';
         } else {
-            $scope.bottomValue = '20px';
+            $scope.bottom = $scope.bottom || '20px';
         }
 
     }

@@ -51,9 +51,7 @@ where `myEvent()` is trigger when you tap or click.
 * __icon__: ionic icon (`ion-plus` by default; note that the `icon` class is already defined)
 * __icon-color__: CSS Color for the icon (`#fff` by default) 
 * __has-footer__: if the template has a footer, so it fixes the position (`false` by default)
-* __bottom__: CSS value in pixel to change the distance from the bottom, e.g. 40px.
-* __left__: CSS value in pixel to change the distance from the left, e.g. 40px. If left is defined, `right` does not apply
-* __right__: CSS value in pixel to change the distance from the right, e.g. 40px. If left is defined, `left` does not apply
+* __bottom__: CSS value in pixel to change the distance from the bottom, e.g. 40px. If has-footer is true, the value does not apply. By default is 20px if has-footer = false and 60px if has-footer = true
 * __is-centered__: `true` to center the button
 * __text__: if you want to attach a lable to the button
 * __text-class__: CSS Class for the button. Note: add !important to the CSS statements if they are not applied correctly. 
@@ -84,9 +82,7 @@ ion-floating-menu:
 * __menu-open-icon__: ionic icon (`ion-minus` by default; note that the `icon` class is already defined)
 * __menu-open-icon-color__: CSS Color for the icon (`#fff` by default) 
 * __has-footer__: if the template has a footer, so it fixes the position (`false` by default)
-* __bottom__: CSS value in pixel to change the distance from the bottom, e.g. 40px.
-* __left__: CSS value in pixel to change the distance from the left, e.g. 40px. If left is defined, `right` does not apply
-* __right__: CSS value in pixel to change the distance from the right, e.g. 40px. If left is defined, `left` does not apply
+* __bottom__: CSS value in pixel to change the distance from the bottom, e.g. 40px. If has-footer is true, the value does not apply. By default is 20px if has-footer = false and 60px if has-footer = true
 * __backdrop__: if true the Ionic backdrop is applied as the menu open. Important: place yout ion-floating-menu tag OUTSIDE the ion-pane otherwise it will not be clickable (see demo/menu-with-backdrop.html)
 
 ion-floating-item:
