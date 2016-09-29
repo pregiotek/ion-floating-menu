@@ -6,7 +6,9 @@
     "description": "Material UI-like Floating Action Button and Menu for Ionic applications",
     "main": [
         "dist/ion-floating-menu.css",
-        "dist/ion-floating-menu.js"
+        "dist/ion-floating-menu.js",
+        "dist/ion-floating-menu.min.css",
+        "dist/ion-floating-menu.min.js"
     ],
     "moduleType": [
         "node"
