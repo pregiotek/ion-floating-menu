@@ -14,12 +14,13 @@
 (function () {
     'use strict';
 
-
     angular.module('ion-floating-menu', [])
 
             .directive('ionFloatingButton', ionFloatingButton)
             .directive('ionFloatingMenu', ionFloatingMenu)
-            .directive('ionFloatingItem', ionFloatingItem);
+            .directive('ionFloatingItem', ionFloatingItem)
+            .factory('$ionicBackdropIon', $ionicBackdropIon);
+
 
     function ionFloatingButton() {
         return {
@@ -117,8 +118,8 @@
         };
     }
 
-    ionFloatingMenuCtrl.$inject = ['$scope', '$rootScope','$ionicBackdrop'];
-    function ionFloatingMenuCtrl($scope, $rootScope, $ionicBackdrop) {
+    ionFloatingMenuCtrl.$inject = ['$scope', '$rootScope', '$ionicBackdropIon'];
+    function ionFloatingMenuCtrl($scope, $rootScope, $ionicBackdropIon) {
         $scope.isOpen = false;
         $scope.open = function () {
             $scope.isOpen = !$scope.isOpen;
@@ -133,19 +134,19 @@
             $scope.icon = menuOpenIcon;
             $scope.iconColor = menuOpenIconColor;
 
-            if (backdrop){
-                $ionicBackdrop.retain();
-             }
-             $rootScope.$broadcast('floating-menu:open');
+            if (backdrop) {
+                $ionicBackdropIon.retain();
+            }
+            $rootScope.$broadcast('floating-menu:open');
         };
         $scope.setClose = function () {
             $scope.buttonColor = menuColor;
             $scope.icon = menuIcon;
             $scope.iconColor = menuIconColor;
-            if (backdrop){
-                $ionicBackdrop.release();
-             }
-             $rootScope.$broadcast('floating-menu:close');
+            if (backdrop) {
+                $ionicBackdropIon.release();
+            }
+            $rootScope.$broadcast('floating-menu:close');
         };
         var menuColor = $scope.menuColor || '#2AC9AA';
         var menuIcon = $scope.menuIcon || 'ion-plus';
@@ -170,4 +171,62 @@
         $scope.iconColor = $scope.iconColor || '#fff';
     }
 
+
+    $ionicBackdropIon.$inject = ['$document', '$timeout', '$$rAF', '$rootScope'];
+    function $ionicBackdropIon($document, $timeout, $$rAF, $rootScope) {
+        var el = angular.element('<div class="backdrop">');
+        var backdropHolds = 0;
+
+
+        var a = angular.element(document.querySelector('ion-content')).append(el[0]);
+
+        return {
+            /**
+             * @ngdoc method
+             * @name $ionicBackdrop#retain
+             * @description Retains the backdrop.
+             */
+            retain: retain,
+            /**
+             * @ngdoc method
+             * @name $ionicBackdrop#release
+             * @description
+             * Releases the backdrop.
+             */
+            release: release,
+            getElement: getElement,
+            // exposed for testing
+            _element: el
+        };
+
+        function retain() {
+            backdropHolds++;
+            if (backdropHolds === 1) {
+                el.addClass('visible');
+                $rootScope.$broadcast('backdrop.shown');
+                $$rAF(function () {
+                    // If we're still at >0 backdropHolds after async...
+                    if (backdropHolds >= 1)
+                        el.addClass('active');
+                });
+            }
+        }
+        function release() {
+            if (backdropHolds === 1) {
+                el.removeClass('active');
+                $rootScope.$broadcast('backdrop.hidden');
+                $timeout(function () {
+                    // If we're still at 0 backdropHolds after async...
+                    if (backdropHolds === 0)
+                        el.removeClass('visible');
+                }, 400, false);
+            }
+            backdropHolds = Math.max(0, backdropHolds - 1);
+        }
+
+        function getElement() {
+            return el;
+        }
+
+    }
 })();
