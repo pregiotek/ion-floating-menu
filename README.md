@@ -83,7 +83,7 @@ ion-floating-menu:
 * __menu-open-icon-color__: CSS Color for the icon (`#fff` by default) 
 * __has-footer__: if the template has a footer, so it fixes the position (`false` by default)
 * __bottom__: CSS value in pixel to change the distance from the bottom, e.g. 40px. If has-footer is true, the value does not apply. By default is 20px if has-footer = false and 60px if has-footer = true
-* __backdrop__: if true the Ionic backdrop is applied as the menu open. Important: place yout ion-floating-menu tag OUTSIDE the ion-pane otherwise it will not be clickable (see demo/menu-with-backdrop.html)
+* __backdrop__: if true the Ionic backdrop is applied as the menu open (see demo/menu-with-backdrop.html).
 
 ion-floating-item:
 * __click__: event expression (required)
