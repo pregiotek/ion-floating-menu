@@ -110,7 +110,7 @@
             template:
                     '<li ng-click="click()" ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
                     '<span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span>' +
-                    '<img ng-if="iconImagePath" class="menu-icon" ng-class="iconImageClass" src="{{iconImagePath}}"/>' +
+                    '<img ng-if="iconImagePath" class="menu-icon" ng-class="iconImageClass" ng-src="{{iconImagePath}}"/>' +
                     '<i ng-if="!iconImagePath" class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i>' +
                     '</li>',
             replace: false,
