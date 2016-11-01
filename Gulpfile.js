@@ -4,7 +4,7 @@ var gulp = require('gulp'),
         concat  = require('gulp-concat')
         cleanCSS = require('gulp-clean-css');
 
-gulp.task('minimize', function () {
+gulp.task('build', function () {
     gulp.src(['./dist/*.js'])
             .pipe(uglify())
     .pipe(concat('ion-floating-menu.min.js'))
@@ -20,6 +20,6 @@ gulp.task('minimize', function () {
  gulp.run('js');
  });*/
 
-gulp.task('default', ['minimize'], function () {
+gulp.task('default', ['build'], function () {
 
 });
