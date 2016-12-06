@@ -40,7 +40,7 @@
             },
             template: '<ul ng-click="click()" id="floating-button" ng-class="{\'center\': isCentered, \'left\': isLeft, \'right\': !isLeft}" ng-style="{\'bottom\' : \'{{bottom}}\' }">' +
             '<li ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
-            '<a><span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span><i class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i></a>' +
+            '<a><span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span><i class="icon menu-icon" ng-class="icon" ng-style="{\'color\': iconColor }"></i></a>' +
             '</li></ul>',
             replace: false,
             transclude: true,
