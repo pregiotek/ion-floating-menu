@@ -55,11 +55,13 @@ where `myEvent()` is trigger when you tap or click.
 * __is-centered__: `true` to center the button
 * __text__: if you want to attach a lable to the button
 * __text-class__: CSS Class for the button. Note: add !important to the CSS statements if they are not applied correctly. 
+* __is-left__: if this flag is marked as true, it will align the button at left. Otherwise, it will be at right (default). You can have two buttons at the same time.
 
 ## Usage: ion-floating-menu
 
 ![Alt ion-floating-menu](/doc/ion-floating-menu.png)
 ![Alt ion-floating-menu](/doc/ion-floating-menu-2.png)
+![Alt ion-floating-menu](/doc/ion-floating-menu-3.png)
 
 Add the `ion-floating-menu` directive in your template.
 

@@ -15,8 +15,7 @@
 
 #floating-button {
     bottom: 20px;
-    position: fixed;
-    right: 20px;
+    position: fixed;    
     z-index : 9999;
     width: 60px;
     height: 60px;
@@ -33,6 +32,14 @@
     padding: 0;
     border: none;
     border-radius: 50%;
+}
+
+#floating-button.right{
+right: 20px;
+}
+
+#floating-button.left{
+left: 20px;
 }
 
 #floating-button.center{
