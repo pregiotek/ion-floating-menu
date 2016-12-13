@@ -50,7 +50,7 @@
 
     ionFloatingButtonCtrl.$inject = ['$scope'];
     function ionFloatingButtonCtrl($scope) {
-        $scope.buttonColor = $scope.buttonColor || '#2AC9AA';
+        $scope.buttonColor = $scope.buttonColor || '#14579F';
         $scope.icon = $scope.icon || 'ion-plus';
         $scope.iconColor = $scope.iconColor || '#fff';
         $scope.hasFooter = $scope.hasFooter || false;
@@ -100,7 +100,7 @@
             require: ['^ionFloatingMenu'],
             scope: {
                 click: '&?',
-                icon: '@',
+                icon: '@?',
                 iconColor: '@?',
                 buttonColor: '@?',
                 buttonClass: '@?',
@@ -113,7 +113,7 @@
             '<li ng-click="click()" ng-class="buttonClass" ng-style="{\'background-color\': buttonColor }">' +
             '<span ng-if="text" class="label-container"><span class="label" ng-class="textClass" ng-bind="text"></span></span>' +
             '<img ng-if="iconImagePath" class="menu-icon" ng-class="iconImageClass" ng-src="{{iconImagePath}}"/>' +
-            '<i ng-if="!iconImagePath" class="icon menu-icon" ng-class="{ \'{{icon}}\' : true}" ng-style="{\'color\': iconColor }"></i>' +
+            '<i ng-if="!iconImagePath" class="icon menu-icon" ng-class="icon" ng-style="{\'color\': iconColor }"></i>' +
             '</li>',
             replace: false,
             controller: ionFloatingItemCtrl
@@ -150,10 +150,10 @@
             }
             $rootScope.$broadcast('floating-menu:close');
         };
-        var menuColor = $scope.menuColor || '#2AC9AA';
+        var menuColor = $scope.menuColor || '#14579F';
         var menuIcon = $scope.menuIcon || 'ion-plus';
         var menuIconColor = $scope.menuIconColor || '#fff';
-        var menuOpenColor = $scope.menuOpenColor || '#2AC9AA';
+        var menuOpenColor = $scope.menuOpenColor || '#14579F';
         var menuOpenIcon = $scope.menuOpenIcon || 'ion-minus';
         var menuOpenIconColor = $scope.menuOpenIconColor || '#fff';
         var backdrop = $scope.backdrop || false;
@@ -169,7 +169,7 @@
 
     ionFloatingItemCtrl.$inject = ['$scope'];
     function ionFloatingItemCtrl($scope) {
-        $scope.buttonColor = $scope.buttonColor || '#2AC9AA';
+        $scope.buttonColor = $scope.buttonColor || '#14579F';
         $scope.iconColor = $scope.iconColor || '#fff';
     }
 
